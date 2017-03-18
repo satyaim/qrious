@@ -1,0 +1,22 @@
+{% extends 'Qrious/base.html' %}
+
+{%  block body %}
+    {% if object_list %}
+        <h3>Upcoming Grubs - </h3>
+        <ul>
+            {% for items in object_list %}
+            <li><a href="{% url 'Qrious:detail' items.id %}">{{ items.question_no }}</a>
+
+            {% endfor %}
+
+
+        </ul>
+    {% else %}
+        <h3>No new requests</h3>
+    {% endif %}
+
+
+
+{% endblock %}
+
+
